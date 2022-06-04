@@ -4,6 +4,7 @@ import "@splidejs/splide/css";
 import Wrapper from "./UI/Wrapper";
 import Card from "./UI/Card";
 import Gradient from "./UI/Gradient";
+import { Link } from "react-router-dom";
 
 const Veggie = () => {
   const [veggie, setVeggie] = useState([]);
@@ -39,9 +40,11 @@ const Veggie = () => {
           return (
             <SplideSlide key={index}>
               <Card key={index}>
-                <p>{item.title}</p>
-                <img src={item.image} alt={item.title} />
-                <Gradient />
+                <Link to={`/recipe/${item.id}`}>
+                  <p>{item.title}</p>
+                  <img src={item.image} alt={item.title} />
+                  <Gradient />
+                </Link>
               </Card>
             </SplideSlide>
           );

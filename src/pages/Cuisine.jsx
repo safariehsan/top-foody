@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Category from "../components/Category";
+import Search from "../components/Search";
 
 function Cuisine() {
   const capitalFirstLetter = (str) => {
@@ -23,16 +24,26 @@ function Cuisine() {
   }, [params.type]);
   return (
     <>
-      <Category />
-      <h2 style={{ textAlign: "center", margin: "2rem 0" }}>
+      <h1 style={{ textAlign: "center", margin: "2rem 0" }}>
         {capitalFirstLetter(params.type)} Foods
-      </h2>
-      <Grid className="container">
+      </h1>
+      <Category />
+      <Search />
+
+      <Grid
+        className="container"
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         {cuisines.map((item) => {
           return (
             <Card key={item.id}>
-              <img src={item.image} alt={item.title} />
-              <h4>{item.title}</h4>
+              <Link to={`/recipe/${item.id}`}>
+                <img src={item.image} alt={item.title} />
+                <h4>{item.title}</h4>
+              </Link>
             </Card>
           );
         })}
@@ -41,7 +52,7 @@ function Cuisine() {
   );
 }
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 3rem;
