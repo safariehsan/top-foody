@@ -5,6 +5,7 @@ import Searched from "./pages/Searched";
 import Recipe from "./pages/Recipe";
 import { GiKnifeFork } from "react-icons/gi";
 import styled from "styled-components";
+import Calories from "./components/Calories";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/cuisine/:type" element={<Cuisine />} />
         <Route path="/searched/:term" element={<Searched />} />
         <Route path="/recipe/:id" element={<Recipe />} />
+        <Route path="/calories" element={<Calories />} />
       </Routes>
     </Router>
   );
