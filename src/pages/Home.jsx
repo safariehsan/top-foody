@@ -13,7 +13,6 @@ const Home = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Link to="/calories">Meals Based on Calory</Link>
       <Search />
       <Veggie />
       <Popular />

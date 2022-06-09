@@ -19,7 +19,6 @@ function App() {
         <Route path="/cuisine/:type" element={<Cuisine />} />
         <Route path="/searched/:term" element={<Searched />} />
         <Route path="/recipe/:id" element={<Recipe />} />
-        <Route path="/calories" element={<Calories />} />
       </Routes>
     </Router>
   );
