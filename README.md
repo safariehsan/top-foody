@@ -91,3 +91,10 @@ Start the server:
 | `id`      | `string` | **Required**. Id of recipe to fetch |
 
 
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`REACT_APP_API_KEY`
+
